@@ -6,7 +6,7 @@ namespace test
     {
         static void Main(string[] args)
         {
-            List<int> num = NumbersTasks.GenerateNumbers(1, 100, NumbersTasks.IsFibonacci());
+            List<int> num = NumbersTasks.GenerateNumbers(NumbersTasks.IsFibonacci(), 100);
             foreach (var item in num)
             {
                 Console.WriteLine(item);

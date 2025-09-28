@@ -14,8 +14,15 @@ namespace FuncsWithNumbers
      */
     public static class NumbersTasks
     {
-        public static List<int> GenerateNumbers(int start , int end , Predicate<int> delegate_)
+        private static void Swap(ref int x, ref int y)
         {
+            (x, y) = (y, x);
+        }
+        public static List<int> GenerateNumbers(Predicate<int> delegate_, int end = 2, int start = 2)
+        {
+            if (end < start) { 
+            Swap(ref end, ref start);
+            }
             var numbers = new List<int>();
             numbers.AddRange(Enumerable.Range(start , end - start + 1).Where(n => delegate_(n)));
 
