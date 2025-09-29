@@ -10,30 +10,34 @@ namespace FuncsWithNumbers
     /*Завдання 1
 Створіть віконний додаток, що генерує набір простих чисел у діапазоні, зазначеному користувачем. Якщо не вказано нижню межу, потік з стартує з 2. Якщо не вказано верхню межу, генерування відбувається до завершення програми. Використовуйте механізм потоків. Числа повинні відображатися у віконному інтерфейсі.
 
-     
      */
     public static class NumbersTasks
     {
-        private static void Swap(ref int x, ref int y)
+        private static void Swap(ref long x, ref long y)
         {
             (x, y) = (y, x);
         }
-        public static List<int> GenerateNumbers(Predicate<int> delegate_, int end = 2, int start = 2)
+        public static List<long> GenerateNumbers(Predicate<long> delegate_, long start = 2, long end = long.MaxValue)
         {
-            if (end < start) { 
-            Swap(ref end, ref start);
+            if (end < start)
+            {
+                Swap(ref end, ref start);
             }
-            var numbers = new List<int>();
-            numbers.AddRange(Enumerable.Range(start , end - start + 1).Where(n => delegate_(n)));
-
+            var numbers = new List<long>();
+            for (long n = start; n <= end; n++)
+            {
+                if (delegate_(n)) numbers.Add(n);
+            }
             return numbers;
         }
-         public static Predicate<int> IsSimple()
+
+        public static List<long> GenerateNumbers(Predicate<long> delegate_, long end) => GenerateNumbers(delegate_, 2, end);//Якщо не вказано нижню межу, потік з стартує з 2. Я хотіла сперва поставить что бы по умолчанию было значение, но тогда порядок был не логичный
+        public static Predicate<long> IsSimple()
         {
             return number =>
             {
                 if (number < 2) return false;
-                for (int i = 2; i <= Math.Sqrt(number); i++)
+                for (long i = 2; i <= Math.Sqrt(number); i++)
                 {
                     if (number % i == 0) return false;
                 }
@@ -41,15 +45,15 @@ namespace FuncsWithNumbers
             };
         }
         /*Додайте до першого завдання потік, що генерує набір чисел Фібоначчі. Числа повинні відображатися у віконному інтерфейсі*/
-        public static Predicate<int> IsFibonacci()
+        public static Predicate<long> IsFibonacci()
         {
             return number =>
             {
                 if (number < 0) return false;
-                int a = 0, b = 1;
+                long a = 0, b = 1;
                 while (b < number)
                 {
-                    int temp = b;
+                    long temp = b;
                     b += a;
                     a = temp;
                 }
@@ -57,6 +61,23 @@ namespace FuncsWithNumbers
             };
         }
 
+        public static List<long> GenerateFibonacci(long start, long end)//почему я написала отдельный метод, хотя я сделала принимающий делегат? Потому что єтот метод работает быстрее за счет уменьшение logN
+        {
+            if (end < start) Swap(ref end, ref start);
+
+            List<long> numbers = new List<long>();
+            long a = 0, b = 1;
+
+            while (a <= end)
+            {
+                if (a >= start) numbers.Add(a);
+                long temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            return numbers;
+        }
     }
 }
 

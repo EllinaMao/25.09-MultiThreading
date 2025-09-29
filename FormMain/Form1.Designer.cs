@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            groupBox4 = new GroupBox();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            minTb = new TextBox();
-            maxTb = new TextBox();
-            startSimpleBtn = new Button();
-            startFibbonachiBtn = new Button();
-            labelTextMin = new Label();
             labelTextMax = new Label();
+            labelTextMin = new Label();
+            minTb = new TextBox();
+            startSimpleBtn = new Button();
+            maxTb = new TextBox();
+            groupBox2 = new GroupBox();
             fibMaxLb = new Label();
             fibMinLb = new Label();
             minFibTb = new TextBox();
             maxFibTb = new TextBox();
+            startFibbonachiBtn = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            groupBox3 = new GroupBox();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            listBox2 = new ListBox();
+            groupBox4 = new GroupBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            listBox1 = new ListBox();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             groupBox3.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             groupBox4.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -81,21 +81,6 @@
             tableLayoutPanel1.Size = new Size(771, 124);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.9727631F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.0272369F));
-            tableLayoutPanel2.Controls.Add(groupBox3, 0, 0);
-            tableLayoutPanel2.Controls.Add(groupBox4, 1, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 124);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(771, 401);
-            tableLayoutPanel2.TabIndex = 1;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(labelTextMax);
@@ -110,6 +95,51 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // labelTextMax
+            // 
+            labelTextMax.AutoSize = true;
+            labelTextMax.Location = new Point(20, 56);
+            labelTextMax.Name = "labelTextMax";
+            labelTextMax.Size = new Size(100, 15);
+            labelTextMax.TabIndex = 4;
+            labelTextMax.Text = "Верхняя граница";
+            // 
+            // labelTextMin
+            // 
+            labelTextMin.AutoSize = true;
+            labelTextMin.Location = new Point(20, 29);
+            labelTextMin.Name = "labelTextMin";
+            labelTextMin.Size = new Size(99, 15);
+            labelTextMin.TabIndex = 3;
+            labelTextMin.Text = "Нижняя граница";
+            // 
+            // minTb
+            // 
+            minTb.Location = new Point(140, 26);
+            minTb.Name = "minTb";
+            minTb.Size = new Size(220, 23);
+            minTb.TabIndex = 0;
+            // 
+            // startSimpleBtn
+            // 
+            startSimpleBtn.BackColor = SystemColors.ButtonFace;
+            startSimpleBtn.FlatAppearance.BorderColor = Color.Gray;
+            startSimpleBtn.FlatStyle = FlatStyle.Flat;
+            startSimpleBtn.Location = new Point(20, 82);
+            startSimpleBtn.Name = "startSimpleBtn";
+            startSimpleBtn.Size = new Size(340, 23);
+            startSimpleBtn.TabIndex = 2;
+            startSimpleBtn.Text = "Запустить простые числа";
+            startSimpleBtn.UseVisualStyleBackColor = false;
+            startSimpleBtn.Click += startSimpleBtn_Click;
+            // 
+            // maxTb
+            // 
+            maxTb.Location = new Point(140, 53);
+            maxTb.Name = "maxTb";
+            maxTb.Size = new Size(220, 23);
+            maxTb.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -126,6 +156,65 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
             // 
+            // fibMaxLb
+            // 
+            fibMaxLb.AutoSize = true;
+            fibMaxLb.Location = new Point(22, 56);
+            fibMaxLb.Name = "fibMaxLb";
+            fibMaxLb.Size = new Size(100, 15);
+            fibMaxLb.TabIndex = 8;
+            fibMaxLb.Text = "Верхняя граница";
+            // 
+            // fibMinLb
+            // 
+            fibMinLb.AutoSize = true;
+            fibMinLb.Location = new Point(22, 29);
+            fibMinLb.Name = "fibMinLb";
+            fibMinLb.Size = new Size(99, 15);
+            fibMinLb.TabIndex = 7;
+            fibMinLb.Text = "Нижняя граница";
+            // 
+            // minFibTb
+            // 
+            minFibTb.Location = new Point(142, 26);
+            minFibTb.Name = "minFibTb";
+            minFibTb.Size = new Size(220, 23);
+            minFibTb.TabIndex = 5;
+            // 
+            // maxFibTb
+            // 
+            maxFibTb.Location = new Point(142, 53);
+            maxFibTb.Name = "maxFibTb";
+            maxFibTb.Size = new Size(220, 23);
+            maxFibTb.TabIndex = 6;
+            // 
+            // startFibbonachiBtn
+            // 
+            startFibbonachiBtn.BackColor = SystemColors.ButtonFace;
+            startFibbonachiBtn.FlatAppearance.BorderColor = Color.Gray;
+            startFibbonachiBtn.FlatStyle = FlatStyle.Flat;
+            startFibbonachiBtn.Location = new Point(22, 82);
+            startFibbonachiBtn.Name = "startFibbonachiBtn";
+            startFibbonachiBtn.Size = new Size(340, 23);
+            startFibbonachiBtn.TabIndex = 1;
+            startFibbonachiBtn.Text = "Запустить Фиббоначи";
+            startFibbonachiBtn.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.9727631F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.0272369F));
+            tableLayoutPanel2.Controls.Add(groupBox3, 0, 0);
+            tableLayoutPanel2.Controls.Add(groupBox4, 1, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 124);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new Size(771, 401);
+            tableLayoutPanel2.TabIndex = 1;
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(flowLayoutPanel2);
@@ -138,48 +227,6 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Простые числа";
             // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(flowLayoutPanel1);
-            groupBox4.Controls.Add(listBox1);
-            groupBox4.Dock = DockStyle.Fill;
-            groupBox4.Location = new Point(396, 3);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(372, 395);
-            groupBox4.TabIndex = 1;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Числа Фиббоначи";
-            // 
-            // listBox1
-            // 
-            listBox1.Dock = DockStyle.Top;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 19);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(366, 334);
-            listBox1.TabIndex = 0;
-            // 
-            // listBox2
-            // 
-            listBox2.Dock = DockStyle.Top;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(3, 19);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(381, 334);
-            listBox2.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(3, 353);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(366, 39);
-            flowLayoutPanel1.TabIndex = 1;
-            // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Controls.Add(button5);
@@ -191,54 +238,6 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(381, 39);
             flowLayoutPanel2.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ButtonFace;
-            button1.FlatAppearance.BorderColor = Color.Gray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.ButtonFace;
-            button2.FlatAppearance.BorderColor = Color.Gray;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(94, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(85, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.ButtonFace;
-            button3.FlatAppearance.BorderColor = Color.Gray;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(185, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(85, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ButtonFace;
-            button4.FlatAppearance.BorderColor = Color.Gray;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(276, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(85, 23);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -288,93 +287,95 @@
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = false;
             // 
-            // minTb
+            // listBox2
             // 
-            minTb.Location = new Point(140, 26);
-            minTb.Name = "minTb";
-            minTb.Size = new Size(220, 23);
-            minTb.TabIndex = 0;
+            listBox2.Dock = DockStyle.Top;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(3, 19);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(381, 334);
+            listBox2.TabIndex = 0;
             // 
-            // maxTb
+            // groupBox4
             // 
-            maxTb.Location = new Point(140, 53);
-            maxTb.Name = "maxTb";
-            maxTb.Size = new Size(220, 23);
-            maxTb.TabIndex = 1;
+            groupBox4.Controls.Add(flowLayoutPanel1);
+            groupBox4.Controls.Add(listBox1);
+            groupBox4.Dock = DockStyle.Fill;
+            groupBox4.Location = new Point(396, 3);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(372, 395);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Числа Фиббоначи";
             // 
-            // startSimpleBtn
+            // flowLayoutPanel1
             // 
-            startSimpleBtn.BackColor = SystemColors.ButtonFace;
-            startSimpleBtn.FlatAppearance.BorderColor = Color.Gray;
-            startSimpleBtn.FlatStyle = FlatStyle.Flat;
-            startSimpleBtn.Location = new Point(20, 82);
-            startSimpleBtn.Name = "startSimpleBtn";
-            startSimpleBtn.Size = new Size(340, 23);
-            startSimpleBtn.TabIndex = 2;
-            startSimpleBtn.Text = "Запустить простые числа";
-            startSimpleBtn.UseVisualStyleBackColor = false;
+            flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(button4);
+            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.Location = new Point(3, 353);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(366, 39);
+            flowLayoutPanel1.TabIndex = 1;
             // 
-            // startFibbonachiBtn
+            // button1
             // 
-            startFibbonachiBtn.BackColor = SystemColors.ButtonFace;
-            startFibbonachiBtn.FlatAppearance.BorderColor = Color.Gray;
-            startFibbonachiBtn.FlatStyle = FlatStyle.Flat;
-            startFibbonachiBtn.Location = new Point(22, 82);
-            startFibbonachiBtn.Name = "startFibbonachiBtn";
-            startFibbonachiBtn.Size = new Size(340, 23);
-            startFibbonachiBtn.TabIndex = 1;
-            startFibbonachiBtn.Text = "Запустить Фиббоначи";
-            startFibbonachiBtn.UseVisualStyleBackColor = false;
+            button1.BackColor = SystemColors.ButtonFace;
+            button1.FlatAppearance.BorderColor = Color.Gray;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = false;
             // 
-            // labelTextMin
+            // button2
             // 
-            labelTextMin.AutoSize = true;
-            labelTextMin.Location = new Point(20, 29);
-            labelTextMin.Name = "labelTextMin";
-            labelTextMin.Size = new Size(99, 15);
-            labelTextMin.TabIndex = 3;
-            labelTextMin.Text = "Нижняя граница";
+            button2.BackColor = SystemColors.ButtonFace;
+            button2.FlatAppearance.BorderColor = Color.Gray;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(94, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(85, 23);
+            button2.TabIndex = 1;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // labelTextMax
+            // button3
             // 
-            labelTextMax.AutoSize = true;
-            labelTextMax.Location = new Point(20, 56);
-            labelTextMax.Name = "labelTextMax";
-            labelTextMax.Size = new Size(100, 15);
-            labelTextMax.TabIndex = 4;
-            labelTextMax.Text = "Верхняя граница";
+            button3.BackColor = SystemColors.ButtonFace;
+            button3.FlatAppearance.BorderColor = Color.Gray;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(185, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(85, 23);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = false;
             // 
-            // fibMaxLb
+            // button4
             // 
-            fibMaxLb.AutoSize = true;
-            fibMaxLb.Location = new Point(22, 56);
-            fibMaxLb.Name = "fibMaxLb";
-            fibMaxLb.Size = new Size(100, 15);
-            fibMaxLb.TabIndex = 8;
-            fibMaxLb.Text = "Верхняя граница";
+            button4.BackColor = SystemColors.ButtonFace;
+            button4.FlatAppearance.BorderColor = Color.Gray;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(276, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(85, 23);
+            button4.TabIndex = 3;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = false;
             // 
-            // fibMinLb
+            // listBox1
             // 
-            fibMinLb.AutoSize = true;
-            fibMinLb.Location = new Point(22, 29);
-            fibMinLb.Name = "fibMinLb";
-            fibMinLb.Size = new Size(99, 15);
-            fibMinLb.TabIndex = 7;
-            fibMinLb.Text = "Нижняя граница";
-            // 
-            // minFibTb
-            // 
-            minFibTb.Location = new Point(142, 26);
-            minFibTb.Name = "minFibTb";
-            minFibTb.Size = new Size(220, 23);
-            minFibTb.TabIndex = 5;
-            // 
-            // maxFibTb
-            // 
-            maxFibTb.Location = new Point(142, 53);
-            maxFibTb.Name = "maxFibTb";
-            maxFibTb.Size = new Size(220, 23);
-            maxFibTb.TabIndex = 6;
+            listBox1.Dock = DockStyle.Top;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(3, 19);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(366, 334);
+            listBox1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -386,15 +387,15 @@
             Name = "Form1";
             Text = "Form1";
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
+            flowLayoutPanel2.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
