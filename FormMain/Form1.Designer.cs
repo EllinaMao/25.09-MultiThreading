@@ -38,8 +38,8 @@
             labelTextMin = new Label();
             startSimpleBtn = new Button();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            fbMaxTb = new TextBox();
+            fbMinTb = new TextBox();
             fibMaxLb = new Label();
             fibMinLb = new Label();
             startFibbonachiBtn = new Button();
@@ -165,8 +165,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(fbMaxTb);
+            groupBox2.Controls.Add(fbMinTb);
             groupBox2.Controls.Add(fibMaxLb);
             groupBox2.Controls.Add(fibMinLb);
             groupBox2.Controls.Add(startFibbonachiBtn);
@@ -178,19 +178,19 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
             // 
-            // textBox3
+            // fbMaxTb
             // 
-            textBox3.Location = new Point(139, 53);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(223, 23);
-            textBox3.TabIndex = 7;
+            fbMaxTb.Location = new Point(139, 53);
+            fbMaxTb.Name = "fbMaxTb";
+            fbMaxTb.Size = new Size(223, 23);
+            fbMaxTb.TabIndex = 7;
             // 
-            // textBox4
+            // fbMinTb
             // 
-            textBox4.Location = new Point(139, 26);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(223, 23);
-            textBox4.TabIndex = 8;
+            fbMinTb.Location = new Point(139, 26);
+            fbMinTb.Name = "fbMinTb";
+            fbMinTb.Size = new Size(223, 23);
+            fbMinTb.TabIndex = 8;
             // 
             // fibMaxLb
             // 
@@ -286,6 +286,7 @@
             simpleContinue.TabIndex = 1;
             simpleContinue.Text = "Продолжить";
             simpleContinue.UseVisualStyleBackColor = false;
+            simpleContinue.Click += simpleContinue_Click;
             // 
             // simpleStop
             // 
@@ -311,6 +312,7 @@
             simpleRestart.TabIndex = 3;
             simpleRestart.Text = "Перезапуск";
             simpleRestart.UseVisualStyleBackColor = false;
+            simpleRestart.Click += simpleRestart_Click;
             // 
             // groupBox4
             // 
@@ -347,6 +349,7 @@
             fibbPause.TabIndex = 4;
             fibbPause.Text = "Пауза";
             fibbPause.UseVisualStyleBackColor = false;
+            fibbPause.Click += fibbPause_Click;
             // 
             // fibbContinue
             // 
@@ -359,6 +362,7 @@
             fibbContinue.TabIndex = 5;
             fibbContinue.Text = "Продолжить";
             fibbContinue.UseVisualStyleBackColor = false;
+            fibbContinue.Click += fibbContinue_Click;
             // 
             // fibbStop
             // 
@@ -371,6 +375,7 @@
             fibbStop.TabIndex = 6;
             fibbStop.Text = "Стоп";
             fibbStop.UseVisualStyleBackColor = false;
+            fibbStop.Click += fibbStop_Click;
             // 
             // fibbRestart
             // 
@@ -383,6 +388,7 @@
             fibbRestart.TabIndex = 7;
             fibbRestart.Text = "Перезапуск";
             fibbRestart.UseVisualStyleBackColor = false;
+            fibbRestart.Click += fibbRestart_Click;
             // 
             // Form1
             // 
@@ -430,8 +436,8 @@
         private Label fibMinLb;
         private TextBox maxTb;
         private TextBox minTb;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox fbMaxTb;
+        private TextBox fbMinTb;
         private Button fibbPause;
         private Button fibbContinue;
         private Button fibbStop;

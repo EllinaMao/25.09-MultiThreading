@@ -1,4 +1,6 @@
-﻿namespace FormMain
+﻿using System.Numerics;
+
+namespace FormMain
 {
     /*
      * Завдання 1
@@ -7,81 +9,67 @@
     public static class ThreadNumberTask
     {
 
-        public static void GenerateNumbers(Predicate<long> predicate, EventHandler<EventCreatorEventArgs>? onNumber, long start = 2, long? end = null)
+        public static void GenerateNumbers(Predicate<BigInteger> predicate, EventHandler<EventCreatorEventArgs>? onNumber, BigInteger start, BigInteger? end = null, ControlTokens? tokens = null)
         {
-            if (end == null)
+            var n = start;
+            while (end == null || n <= end)
             {
-                GenerateInfinite(predicate, onNumber, start);
-                return;
-            }
-
-            for (var i = start; i <= end; i++)
-            {
-                if (predicate(i))
+                tokens?.Token.ThrowIfCancellationRequested();
+                tokens?.WaitIfPaused();
+                if (predicate(n))
                 {
-                    onNumber?.Invoke(null, new EventCreatorEventArgs(i));
-                    Thread.Sleep(100);
+                    onNumber?.Invoke(null, new EventCreatorEventArgs(n));
+                    Thread.Sleep(1000);
                 }
+
+                n++;
             }
         }
 
-
-        private static void GenerateInfinite(Predicate<long> predicate, EventHandler<EventCreatorEventArgs>? onNumber, long number)
-        {
-            try
-            {
-                while (true)
-                {
-                    if (predicate(number))
-                    {
-                        onNumber?.Invoke(null, new EventCreatorEventArgs(number));
-                        Thread.Sleep(100);
-                    }
-                    number++;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());//затычка
-            }
-
-        }
-
-        public static Predicate<long> IsSimple()
+        public static Predicate<BigInteger> IsSimple()
         {
             return number =>
             {
                 if (number < 2) return false;
-                var sqrt = Math.Sqrt(number);
+                if (number == 2 || number == 3) return true;
+                if (number % 2 == 0) return false;
 
-                for (var i = 2; i <= sqrt; i++)
+                BigInteger i = 3;
+                while (i * i <= number)
                 {
                     if (number % i == 0) return false;
+                    i += 2;
                 }
                 return true;
             };
         }
-        public static void GenerateFibonacci(EventHandler<EventCreatorEventArgs>? onNumber, long start, long end)//почему я написала отдельный метод, хотя я сделала метод принимающий делегат? Потому что этот метод работает быстрее на больших числах. 
+
+        public static void GenerateFibonacci(EventHandler<EventCreatorEventArgs>? onNumber, BigInteger start, BigInteger? end = null, ControlTokens? tokens = null)
         {
             try
             {
-                long a = 0, b = 1;
+                BigInteger a = 0;
+                BigInteger b = 1;
 
-                while (a <= end)
+                while (end == null || a <= end)
                 {
-                    if (a >= start) onNumber?.Invoke(null, new EventCreatorEventArgs(a));
-                    long temp = a + b;
+                    tokens?.Token.ThrowIfCancellationRequested();
+                    tokens?.WaitIfPaused();
+                    if (a >= start)
+                    {
+                        onNumber?.Invoke(null, new EventCreatorEventArgs(a));
+                        Thread.Sleep(800);
+                    }
+                    var temp = a + b;
                     a = b;
                     b = temp;
-                    Thread.Sleep(100);
-                    
+   
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());//затычка
+                Console.WriteLine(e);
             }
-
         }
 
     }
