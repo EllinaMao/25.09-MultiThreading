@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            simpleListBox = new ListBox();
+            fibbListBox = new ListBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
+            maxTb = new TextBox();
+            minTb = new TextBox();
             labelTextMax = new Label();
             labelTextMin = new Label();
-            minTb = new TextBox();
             startSimpleBtn = new Button();
-            maxTb = new TextBox();
             groupBox2 = new GroupBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
             fibMaxLb = new Label();
             fibMinLb = new Label();
-            minFibTb = new TextBox();
-            maxFibTb = new TextBox();
             startFibbonachiBtn = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox3 = new GroupBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            listBox2 = new ListBox();
+            pauseSimpl = new Button();
+            simpleContinue = new Button();
+            simpleStop = new Button();
+            simpleRestart = new Button();
             groupBox4 = new GroupBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            listBox1 = new ListBox();
+            fibbPause = new Button();
+            fibbContinue = new Button();
+            fibbStop = new Button();
+            fibbRestart = new Button();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -65,6 +65,28 @@
             groupBox4.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // simpleListBox
+            // 
+            simpleListBox.BorderStyle = BorderStyle.FixedSingle;
+            simpleListBox.Dock = DockStyle.Top;
+            simpleListBox.ItemHeight = 15;
+            simpleListBox.Location = new Point(3, 19);
+            simpleListBox.MultiColumn = true;
+            simpleListBox.Name = "simpleListBox";
+            simpleListBox.SelectionMode = SelectionMode.None;
+            simpleListBox.Size = new Size(379, 332);
+            simpleListBox.TabIndex = 0;
+            // 
+            // fibbListBox
+            // 
+            fibbListBox.Dock = DockStyle.Top;
+            fibbListBox.ItemHeight = 15;
+            fibbListBox.Location = new Point(3, 19);
+            fibbListBox.MultiColumn = true;
+            fibbListBox.Name = "fibbListBox";
+            fibbListBox.Size = new Size(366, 334);
+            fibbListBox.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -78,23 +100,37 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(771, 124);
+            tableLayoutPanel1.Size = new Size(769, 124);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(maxTb);
+            groupBox1.Controls.Add(minTb);
             groupBox1.Controls.Add(labelTextMax);
             groupBox1.Controls.Add(labelTextMin);
-            groupBox1.Controls.Add(minTb);
             groupBox1.Controls.Add(startSimpleBtn);
-            groupBox1.Controls.Add(maxTb);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(387, 118);
+            groupBox1.Size = new Size(385, 118);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // maxTb
+            // 
+            maxTb.Location = new Point(137, 53);
+            maxTb.Name = "maxTb";
+            maxTb.Size = new Size(223, 23);
+            maxTb.TabIndex = 9;
+            // 
+            // minTb
+            // 
+            minTb.Location = new Point(137, 26);
+            minTb.Name = "minTb";
+            minTb.Size = new Size(223, 23);
+            minTb.TabIndex = 10;
             // 
             // labelTextMax
             // 
@@ -114,13 +150,6 @@
             labelTextMin.TabIndex = 3;
             labelTextMin.Text = "Нижняя граница";
             // 
-            // minTb
-            // 
-            minTb.Location = new Point(140, 26);
-            minTb.Name = "minTb";
-            minTb.Size = new Size(220, 23);
-            minTb.TabIndex = 0;
-            // 
             // startSimpleBtn
             // 
             startSimpleBtn.BackColor = SystemColors.ButtonFace;
@@ -134,27 +163,34 @@
             startSimpleBtn.UseVisualStyleBackColor = false;
             startSimpleBtn.Click += startSimpleBtn_Click;
             // 
-            // maxTb
-            // 
-            maxTb.Location = new Point(140, 53);
-            maxTb.Name = "maxTb";
-            maxTb.Size = new Size(220, 23);
-            maxTb.TabIndex = 1;
-            // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(textBox4);
             groupBox2.Controls.Add(fibMaxLb);
             groupBox2.Controls.Add(fibMinLb);
-            groupBox2.Controls.Add(minFibTb);
-            groupBox2.Controls.Add(maxFibTb);
             groupBox2.Controls.Add(startFibbonachiBtn);
             groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Location = new Point(396, 3);
+            groupBox2.Location = new Point(394, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(372, 118);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(139, 53);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(223, 23);
+            textBox3.TabIndex = 7;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(139, 26);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(223, 23);
+            textBox4.TabIndex = 8;
             // 
             // fibMaxLb
             // 
@@ -174,20 +210,6 @@
             fibMinLb.TabIndex = 7;
             fibMinLb.Text = "Нижняя граница";
             // 
-            // minFibTb
-            // 
-            minFibTb.Location = new Point(142, 26);
-            minFibTb.Name = "minFibTb";
-            minFibTb.Size = new Size(220, 23);
-            minFibTb.TabIndex = 5;
-            // 
-            // maxFibTb
-            // 
-            maxFibTb.Location = new Point(142, 53);
-            maxFibTb.Name = "maxFibTb";
-            maxFibTb.Size = new Size(220, 23);
-            maxFibTb.TabIndex = 6;
-            // 
             // startFibbonachiBtn
             // 
             startFibbonachiBtn.BackColor = SystemColors.ButtonFace;
@@ -199,6 +221,7 @@
             startFibbonachiBtn.TabIndex = 1;
             startFibbonachiBtn.Text = "Запустить Фиббоначи";
             startFibbonachiBtn.UseVisualStyleBackColor = false;
+            startFibbonachiBtn.Click += startFibbonachiBtn_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -212,96 +235,89 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(771, 401);
+            tableLayoutPanel2.Size = new Size(769, 401);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(flowLayoutPanel2);
-            groupBox3.Controls.Add(listBox2);
+            groupBox3.Controls.Add(simpleListBox);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Location = new Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(387, 395);
+            groupBox3.Size = new Size(385, 395);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Простые числа";
             // 
             // flowLayoutPanel2
             // 
-            flowLayoutPanel2.Controls.Add(button5);
-            flowLayoutPanel2.Controls.Add(button6);
-            flowLayoutPanel2.Controls.Add(button7);
-            flowLayoutPanel2.Controls.Add(button8);
+            flowLayoutPanel2.Controls.Add(pauseSimpl);
+            flowLayoutPanel2.Controls.Add(simpleContinue);
+            flowLayoutPanel2.Controls.Add(simpleStop);
+            flowLayoutPanel2.Controls.Add(simpleRestart);
             flowLayoutPanel2.Dock = DockStyle.Bottom;
             flowLayoutPanel2.Location = new Point(3, 353);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(381, 39);
+            flowLayoutPanel2.Size = new Size(379, 39);
             flowLayoutPanel2.TabIndex = 2;
             // 
-            // button5
+            // pauseSimpl
             // 
-            button5.BackColor = SystemColors.ButtonFace;
-            button5.FlatAppearance.BorderColor = Color.Gray;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(3, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(87, 23);
-            button5.TabIndex = 0;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = false;
+            pauseSimpl.BackColor = SystemColors.ButtonFace;
+            pauseSimpl.FlatAppearance.BorderColor = Color.Gray;
+            pauseSimpl.FlatStyle = FlatStyle.Flat;
+            pauseSimpl.Location = new Point(3, 3);
+            pauseSimpl.Name = "pauseSimpl";
+            pauseSimpl.Size = new Size(86, 23);
+            pauseSimpl.TabIndex = 0;
+            pauseSimpl.Text = "Пауза";
+            pauseSimpl.UseVisualStyleBackColor = false;
+            pauseSimpl.Click += pauseSimpl_Click;
             // 
-            // button6
+            // simpleContinue
             // 
-            button6.BackColor = SystemColors.ButtonFace;
-            button6.FlatAppearance.BorderColor = Color.Gray;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Location = new Point(96, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(87, 23);
-            button6.TabIndex = 1;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
+            simpleContinue.BackColor = SystemColors.ButtonFace;
+            simpleContinue.FlatAppearance.BorderColor = Color.Gray;
+            simpleContinue.FlatStyle = FlatStyle.Flat;
+            simpleContinue.Location = new Point(95, 3);
+            simpleContinue.Name = "simpleContinue";
+            simpleContinue.Size = new Size(97, 23);
+            simpleContinue.TabIndex = 1;
+            simpleContinue.Text = "Продолжить";
+            simpleContinue.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // simpleStop
             // 
-            button7.BackColor = SystemColors.ButtonFace;
-            button7.FlatAppearance.BorderColor = Color.Gray;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(189, 3);
-            button7.Name = "button7";
-            button7.Size = new Size(87, 23);
-            button7.TabIndex = 2;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = false;
+            simpleStop.BackColor = SystemColors.ButtonFace;
+            simpleStop.FlatAppearance.BorderColor = Color.Gray;
+            simpleStop.FlatStyle = FlatStyle.Flat;
+            simpleStop.Location = new Point(198, 3);
+            simpleStop.Name = "simpleStop";
+            simpleStop.Size = new Size(77, 23);
+            simpleStop.TabIndex = 2;
+            simpleStop.Text = "Стоп";
+            simpleStop.UseVisualStyleBackColor = false;
+            simpleStop.Click += simpleStop_Click;
             // 
-            // button8
+            // simpleRestart
             // 
-            button8.BackColor = SystemColors.ButtonFace;
-            button8.FlatAppearance.BorderColor = Color.Gray;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Location = new Point(282, 3);
-            button8.Name = "button8";
-            button8.Size = new Size(96, 23);
-            button8.TabIndex = 3;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // listBox2
-            // 
-            listBox2.Dock = DockStyle.Top;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(3, 19);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(381, 334);
-            listBox2.TabIndex = 0;
+            simpleRestart.BackColor = SystemColors.ButtonFace;
+            simpleRestart.FlatAppearance.BorderColor = Color.Gray;
+            simpleRestart.FlatStyle = FlatStyle.Flat;
+            simpleRestart.Location = new Point(281, 3);
+            simpleRestart.Name = "simpleRestart";
+            simpleRestart.Size = new Size(95, 23);
+            simpleRestart.TabIndex = 3;
+            simpleRestart.Text = "Перезапуск";
+            simpleRestart.UseVisualStyleBackColor = false;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(flowLayoutPanel1);
-            groupBox4.Controls.Add(listBox1);
+            groupBox4.Controls.Add(fibbListBox);
             groupBox4.Dock = DockStyle.Fill;
-            groupBox4.Location = new Point(396, 3);
+            groupBox4.Location = new Point(394, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(372, 395);
             groupBox4.TabIndex = 1;
@@ -310,78 +326,69 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(button4);
+            flowLayoutPanel1.Controls.Add(fibbPause);
+            flowLayoutPanel1.Controls.Add(fibbContinue);
+            flowLayoutPanel1.Controls.Add(fibbStop);
+            flowLayoutPanel1.Controls.Add(fibbRestart);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(3, 353);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(366, 39);
             flowLayoutPanel1.TabIndex = 1;
             // 
-            // button1
+            // fibbPause
             // 
-            button1.BackColor = SystemColors.ButtonFace;
-            button1.FlatAppearance.BorderColor = Color.Gray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = false;
+            fibbPause.BackColor = SystemColors.ButtonFace;
+            fibbPause.FlatAppearance.BorderColor = Color.Gray;
+            fibbPause.FlatStyle = FlatStyle.Flat;
+            fibbPause.Location = new Point(3, 3);
+            fibbPause.Name = "fibbPause";
+            fibbPause.Size = new Size(85, 23);
+            fibbPause.TabIndex = 4;
+            fibbPause.Text = "Пауза";
+            fibbPause.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // fibbContinue
             // 
-            button2.BackColor = SystemColors.ButtonFace;
-            button2.FlatAppearance.BorderColor = Color.Gray;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(94, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(85, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
+            fibbContinue.BackColor = SystemColors.ButtonFace;
+            fibbContinue.FlatAppearance.BorderColor = Color.Gray;
+            fibbContinue.FlatStyle = FlatStyle.Flat;
+            fibbContinue.Location = new Point(94, 3);
+            fibbContinue.Name = "fibbContinue";
+            fibbContinue.Size = new Size(91, 23);
+            fibbContinue.TabIndex = 5;
+            fibbContinue.Text = "Продолжить";
+            fibbContinue.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // fibbStop
             // 
-            button3.BackColor = SystemColors.ButtonFace;
-            button3.FlatAppearance.BorderColor = Color.Gray;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(185, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(85, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
+            fibbStop.BackColor = SystemColors.ButtonFace;
+            fibbStop.FlatAppearance.BorderColor = Color.Gray;
+            fibbStop.FlatStyle = FlatStyle.Flat;
+            fibbStop.Location = new Point(191, 3);
+            fibbStop.Name = "fibbStop";
+            fibbStop.Size = new Size(80, 23);
+            fibbStop.TabIndex = 6;
+            fibbStop.Text = "Стоп";
+            fibbStop.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // fibbRestart
             // 
-            button4.BackColor = SystemColors.ButtonFace;
-            button4.FlatAppearance.BorderColor = Color.Gray;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(276, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(85, 23);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // listBox1
-            // 
-            listBox1.Dock = DockStyle.Top;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 19);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(366, 334);
-            listBox1.TabIndex = 0;
+            fibbRestart.BackColor = SystemColors.ButtonFace;
+            fibbRestart.FlatAppearance.BorderColor = Color.Gray;
+            fibbRestart.FlatStyle = FlatStyle.Flat;
+            fibbRestart.Location = new Point(277, 3);
+            fibbRestart.Name = "fibbRestart";
+            fibbRestart.Size = new Size(85, 23);
+            fibbRestart.TabIndex = 7;
+            fibbRestart.Text = "Перезапуск";
+            fibbRestart.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 525);
+            ClientSize = new Size(769, 525);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
@@ -410,24 +417,24 @@
         private Label labelTextMax;
         private Label labelTextMin;
         private Button startSimpleBtn;
-        private TextBox maxTb;
         private Button startFibbonachiBtn;
-        private TextBox minTb;
         private FlowLayoutPanel flowLayoutPanel2;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private ListBox listBox2;
+        private Button pauseSimpl;
+        private Button simpleContinue;
+        private Button simpleStop;
+        private Button simpleRestart;
+        private ListBox simpleListBox;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private ListBox listBox1;
+        private ListBox fibbListBox;
         private Label fibMaxLb;
         private Label fibMinLb;
-        private TextBox minFibTb;
-        private TextBox maxFibTb;
+        private TextBox maxTb;
+        private TextBox minTb;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Button fibbPause;
+        private Button fibbContinue;
+        private Button fibbStop;
+        private Button fibbRestart;
     }
 }

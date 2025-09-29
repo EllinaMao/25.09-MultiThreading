@@ -9,8 +9,7 @@ namespace FuncsWithNumbers
 {
     /*Завдання 1
 Створіть віконний додаток, що генерує набір простих чисел у діапазоні, зазначеному користувачем. Якщо не вказано нижню межу, потік з стартує з 2. Якщо не вказано верхню межу, генерування відбувається до завершення програми. Використовуйте механізм потоків. Числа повинні відображатися у віконному інтерфейсі.
-
-     */
+    */
     public static class NumbersTasks
     {
         private static void Swap(ref long x, ref long y)
@@ -61,23 +60,7 @@ namespace FuncsWithNumbers
             };
         }
 
-        public static List<long> GenerateFibonacci(long start, long end)//почему я написала отдельный метод, хотя я сделала принимающий делегат? Потому что єтот метод работает быстрее за счет уменьшение logN
-        {
-            if (end < start) Swap(ref end, ref start);
 
-            List<long> numbers = new List<long>();
-            long a = 0, b = 1;
-
-            while (a <= end)
-            {
-                if (a >= start) numbers.Add(a);
-                long temp = a + b;
-                a = b;
-                b = temp;
-            }
-
-            return numbers;
-        }
     }
 }
 
